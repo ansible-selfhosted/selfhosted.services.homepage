@@ -1,0 +1,4 @@
+---
+# defaults file for services.homepage
+
+published_port: 8080
