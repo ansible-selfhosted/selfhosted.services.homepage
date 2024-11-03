@@ -1,4 +1,6 @@
 ---
 # defaults file for services.homepage
 
-published_port: 8080
+config_path: /home/{{ ansible_user_id }}/.config/homepage
+docker_integration: false
+published_port: 3000

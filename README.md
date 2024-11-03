@@ -5,8 +5,45 @@
 ![CI](https://github.com/ansible-selfhosted/selfhosted.homepage/actions/workflows/ci.yml/badge.svg)
 [![Ansible](https://img.shields.io/badge/Ansible-Molecule-EE0000?style=plastic&logo=ansible&logoColor=white)](https://github.com/ansible/molecule)
 
+![](https://github.com/ansible-selfhosted/selfhosted.homepage/actions/workflows/ci.yaml/badge.svg)
+
 <!-- BEGIN_ANSIBLE_DOCS -->
 
-### The readme content is auto-generated with the `hatch run docs:generate` command.
+# Ansible Role: [homepage](https://gethomepage.dev/)
+
+A role to deploy Homepage using rootless Podman with systemd.
+
+## Role Requirements
+
+- none
+
+*Refer to services collection for general requirements*
+
+## Role Arguments
+
+|Option|Description|Type|Required|Default|
+|---|---|---|---|---|
+|config_path|The default path for the config files.|str|False|/home/{{ ansible_user_id }}/.config/homepage|
+|docker_integration|Enables Docker integration.|bool|False|False|
+|published_port|The default port for the web server.|int|False|3000|
+
+
+## Example Playbook
+
+```
+- hosts: all
+  tasks:
+    - name: Importing homepage role
+      ansible.builtin.import_role:
+        name: selfhosted.services.homepage
+      vars:
+```
+
+## License
+
+This project is licensed under the [MIT License](LICENSE)
+
+
+⊂(▀¯▀⊂)
 
 <!-- END_ANSIBLE_DOCS -->
