@@ -7,8 +7,10 @@ ContainerName=homepage
 Image=ghcr.io/gethomepage/homepage:latest
 Pod=homepage.pod
 AutoUpdate=registry
-Volume={{ config_path }}:/app/config:Z
-{% if docker_integration is true %}Volume=/var/run/docker.sock:/var/run/docker.sock{% endif %}
+Volume={{ homepage_config_path }}:/app/config:Z
+{% if homepage_docker_integration is true -%}
+Volume=/var/run/docker.sock:/var/run/docker.sock
+{%- endif %}
 
 [Service]
 Restart=always

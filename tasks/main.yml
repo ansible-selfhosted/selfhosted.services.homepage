@@ -8,7 +8,7 @@
 
 - name: Ensure config path exists
   ansible.builtin.file:
-    path: "{{ config_path }}"
+    path: "{{ homepage_config_path }}"
     state: directory
     mode: "0755"
 

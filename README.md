@@ -23,9 +23,9 @@ A role to deploy Homepage using rootless Podman with systemd.
 
 |Option|Description|Type|Required|Default|
 |---|---|---|---|---|
-|config_path|The default path for the config files.|str|False|/home/{{ ansible_user_id }}/.config/homepage|
-|docker_integration|Enables Docker integration.|bool|False|False|
-|published_port|The default port for the web server.|int|False|3000|
+|homepage_config_path|The default path for the config files.|str|False|/home/{{ ansible_user_id }}/.config/homepage|
+|homepage_docker_integration|Enables Docker integration.|bool|False|False|
+|homepage_published_port|The default port for the web server.|int|False|3000|
 
 
 ## Example Playbook
