@@ -9,22 +9,21 @@ argument_specs:
       - SpeakinTelnet
     options:
       homepage_config_path:
-        type: "str"
+        type: str
         required: false
-        default: "/home/{{ ansible_user_id }}/.config/homepage"
+        default: /home/{{ ansible_user_id }}/.config/homepage
         description:
-          - "The default path for the config files."
+          - The default path for the config files.
       homepage_docker_integration:
-        type: "bool"
+        type: bool
         required: false
         default: false
         description:
-          - "Enables Docker integration."
-          - "/var/run/docker.sock must exist on the\
-            host to be mounted into the container."
+          - Enables Docker integration.
+          - /var/run/docker.sock must exist on thehost to be mounted into the container.
       homepage_published_port:
-        type: "int"
+        type: int
         required: false
         default: 3000
         description:
-          - "The default port for the web server."
+          - The default port for the web server.

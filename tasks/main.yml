@@ -6,6 +6,10 @@
     state: present
   register: user_info
 
+- name: Normalize default paths
+  ansible.builtin.set_fact:
+    homepage_config_path: "{{ homepage_config_path | replace('~', user_info.home) }}"
+
 - name: Ensure config path exists
   ansible.builtin.file:
     path: "{{ homepage_config_path }}"
@@ -18,14 +22,8 @@
     dest: "{{ item.dest }}"
     mode: "0640"
   loop:
-    - {
-      "src": "homepage.container.j2",
-      "dest": "{{ user_info.home }}/.config/containers/systemd/homepage.container",
-    }
-    - {
-      "src": "homepage.pod.j2",
-      "dest": "{{ user_info.home }}/.config/containers/systemd/homepage.pod",
-    }
+    - { src: homepage.container.j2, dest: "{{ user_info.home }}/.config/containers/systemd/homepage.container" }
+    - { src: homepage.pod.j2, dest: "{{ user_info.home }}/.config/containers/systemd/homepage.pod" }
 
 - name: Start the container service
   ansible.builtin.systemd:

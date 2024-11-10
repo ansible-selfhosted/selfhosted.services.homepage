@@ -17,8 +17,4 @@
     - name: Check if the web server is up
       ansible.builtin.assert:
         that:
-          - "
-            'A highly customizable homepage (or startpage /
-            application dashboard) with Docker and service
-            API integrations.'
-            in web_content.content"
+          - " 'A highly customizable homepage (or startpage / application dashboard) with Docker and service API integrations.' in web_content.content"
