@@ -1,6 +1,4 @@
 ---
-# defaults file for services.homepage
-
 homepage_config_path: ~/.config/homepage
 homepage_docker_integration: false
 homepage_published_port: 3000
