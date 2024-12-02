@@ -17,8 +17,9 @@ argument_specs:
       homepage_docker_integration:
         type: bool
         required: false
-        default: false
+        default: true
         description:
+          - Workflow test
           - Enables Docker integration.
           - /var/run/docker.sock must exist on thehost to be mounted into the container.
       homepage_published_port:
