@@ -1,6 +1,6 @@
 ---
 homepage_additional_options: []
-homepage_config_label: ""
+homepage_config_label: ''
 homepage_config_path: ~/.config/homepage
 homepage_docker_integration: false
 homepage_published_port: 3000
