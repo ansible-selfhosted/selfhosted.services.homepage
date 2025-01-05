@@ -23,6 +23,8 @@ A role to deploy Homepage using rootless Podman with systemd.
 
 |Option|Description|Type|Required|Default|
 |---|---|---|---|---|
+|homepage_additional_options|List of additional key=value for the quadlet container<br>ex: - "Network=custom.network"<br>Can also be used to leave comments by preceding with a '#'|list|False|[]|
+|homepage_config_label|The labels for to the homepage config directory<br>Comma separated values (ex: rw,Z)|str|False||
 |homepage_config_path|The default path for the config files.|str|False|~/.config/homepage|
 |homepage_docker_integration|Enables Docker integration.<br>/var/run/docker.sock must exist on thehost to be mounted into the container.|bool|False|False|
 |homepage_published_port|The default port for the web server.|int|False|3000|

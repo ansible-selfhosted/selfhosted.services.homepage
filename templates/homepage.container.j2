@@ -3,14 +3,19 @@ Description=Homepage container
 
 
 [Container]
+AutoUpdate=registry
 ContainerName=homepage
 Image=ghcr.io/gethomepage/homepage:latest
-Pod=homepage.pod
-AutoUpdate=registry
-Volume={{ homepage_config_path }}:/app/config:Z
+PublishPort={{ homepage_published_port }}:3000
+Volume={{ homepage_config_path }}:/app/config{% if homepage_config_label|length > 0 %}:{{ homepage_config_label }}{% endif %}
+
 {% if homepage_docker_integration is true -%}
 Volume=/var/run/docker.sock:/var/run/docker.sock
 {%- endif %}
+
+{% for homepage_var in homepage_additional_options %}
+{{ homepage_var }}
+{% endfor %}
 
 [Service]
 Restart=always

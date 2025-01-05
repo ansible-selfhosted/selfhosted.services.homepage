@@ -23,7 +23,6 @@
     mode: "0640"
   loop:
     - { src: homepage.container.j2, dest: "{{ user_info.home }}/.config/containers/systemd/homepage.container" }
-    - { src: homepage.pod.j2, dest: "{{ user_info.home }}/.config/containers/systemd/homepage.pod" }
 
 - name: Start the container service
   ansible.builtin.systemd:
